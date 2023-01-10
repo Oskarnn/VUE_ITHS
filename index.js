@@ -15,7 +15,9 @@
 Vue.createApp({
 data(){
     return {
-        title: 'HEJ ALLA'
+        title: 'HEJ ALLA',
+        age: 45,
+        Boolean: true
 }
 }
 })

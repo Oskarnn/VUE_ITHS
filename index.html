@@ -2,16 +2,30 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8">
-    <title>v-for med objekt (VG)</title>
+    <title>En kundvagn (VG)</title>
     <meta content="initial-scale=1, width=device-width" name="viewport">
   </head>
   <body>
     <div id="app">
-      <ul>
-        <li v-for="(x, y) in products">
-          {{ y }}</li>
-       
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Antal</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(product, idx) in products">
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <!-- <td>{{product.price}}</td> -->
+            <td><input @click="addToCart(idx)" type="button" value="+"></td>
+          </tr>
+        
+        </tbody>
+      </table>
+      <p>Totalsumma: {{total}}</p>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="index.js"></script>

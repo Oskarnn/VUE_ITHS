@@ -289,10 +289,230 @@
 //   }
 // }).mount('#app')
 
-// MODUL 4
+// MODUL 4 Händelser (v-on) och metoder (methods)
 
-//  UPPGIFT 1 Händelser (v-on) och metoder (methods)
+//  UPPGIFT 1 
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En klickbar knapp</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input v-on:click="onClick" type="button" value="Klicka här">
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
 
 
 
+// Vue.createApp({
+//     methods: {
+//         onClick: function() {
+//             alert("Hello World!")
+//         }
+//     }
+// }).mount('#app')
+
+// Går att skriva onClick()
+
+// data(), methods:, 
+
+// UPPGIFT 2
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Öka insatsen</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input v-on:click="increase" type="button" :value="value">
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+
+// Vue.createApp({
+//     data() {
+//         return {
+//             value: 1
+//         }
+//     },
+
+//     methods: {
+//         increase() {
+//             this.value = this.value + 1
+//         }
+
+//     }
+// }).mount('#app')
+
+// methods för att hämta info i data vid specifika tillfällen??
+
+// UPPGIFT 3
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Öka och minska insatsen</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input :disabled="value === 1" @click="decrease" type="button" value="-">
+//       <input @click="increase" type="button" value="+">
+//       <p>{{ value }}</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// Vue.createApp({
+//     data(){               //data() är en funktionen som retunerar värden i varieblar till sig själv                               
+//         return {
+//             value: 1
+//         }
+//     },
+//     methods: {
+//         increase(){
+//             this.value = this.value +1 
+//         },
+//         decrease(){
+//             this.value = this.value -1
+//         }
+//     }                   
+
+// }).mount('#app')
+
+// UPPGIFT 4
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Öka insatsen variabelt</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input @click="increase(1)" type="button" value="Öka med 1">
+//       <input @click="increase(2)" type="button" value="Öka med 2">
+//       <p>
+//         {{ value }}
+//       </p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// // tänk dig att increase(1) och increase(2) är parametrar som skickas in så funktionen kan exempelvis definieras increase(value)
+
+// Vue.createApp({
+//     data(){
+//         return{
+//             value: 1
+//         }
+//     },
+
+//     methods: {
+//         increase(number) {
+//             this.value = this.value + number
+//         }
+//     }
+
+// }).mount('#app')
+
+// UPPGIFT 5 (VG)
+
+// HTML 
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En kundvagn (VG)</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <table>
+//         <thead>
+//           <tr>
+//             <th>Produkt</th>
+//             <th>Antal</th>
+//             <th></th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           <tr v-for="(product, idx) in products">
+//             <td>{{product.name}}</td>
+//             <td>{{product.quantity}}</td>
+//             <td>{{product.price}}</td>
+//             <td><input @click="addToCart(idx)" type="button" value="+"></td>
+//           </tr>
+        
+//         </tbody>
+//       </table>
+//       <p>Totalsumma: {{total}}</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// Vue.createApp({
+//     computed: {
+//       total() {
+//         return Object.values(this.products).reduce(
+//           (accumulator, value) => accumulator + value.price * value.quantity,
+//           0
+//         )
+//       }
+//     },
+//     data() {
+//       return {
+//         products: {    //Vilket index (UUID-nummer) som ska läggas till
+//           'dd3ce0a3-1d30-4e3e-bcec-7095590019d9': {
+//             name: 'Jacket',
+//             price: 200,
+//             quantity: 0
+//           },
+//           'faf68d1f-8f3e-4668-891c-56118cc330f4': {
+//             name: 'Pants',
+//             price: 100,
+//             quantity: 0
+//           },
+//           'dd2bb41e-7f0a-4cb8-884b-588f9457dd54': {
+//             name: 'Shoes',
+//             price: 100,
+//             quantity: 0
+//           }
+//         }
+//       }
+//     },
+//     methods: {
+//       addToCart(productId) {
+//         this.products[productId].quantity++
+//       } //Vilket index (UUID-nummer) som ska läggas till
+//     }
+//   }).mount('#app')
+
+// MODUL 5 Formulärhantering (v-model), beräknade egenskaper (computed) och bevakare (watch)
+
+// UPPGIFT 1
 

@@ -710,4 +710,26 @@
 //     }
 
 // }).mount('#app')
+
+// UPPGIFT 5 (VG) INTE KLAR
+
+// Vue.createApp({
+//     data(){
+//         return{
+//             userName: "",
+//             message: 'Välkommen'
+            
+//         }
+//     },
+
+//     methods: {
+//         onClick() {
+
+//         }
+//     }
+// }).mount('#app')
+
+// MODUL 6
+
+// UPPGIFT 1
   

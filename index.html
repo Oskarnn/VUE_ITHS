@@ -1,128 +1,30 @@
-<!DOCTYPE html>
-<html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>Bevakare</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-  </head>
-  <body>
-    <div id="app">
-      <input v-model="s">
-    </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="index.js"></script>
-  </body>
-</html>
 
 
 
 <!-- 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>VUE lessons</title>
-    
-</head>
-<body>
+ONGOING VG UPPGIFT -->
+<!-- <!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <title>submit (VG)</title>
+    <meta content="initial-scale=1, width=device-width" name="viewport">
+  </head>
+  <body>
     <div id="app">
-       <p>{{Object.values(object) }} </p>
+      <form @submit="onSubmit">
+        <input v-model="userName">
+        <input :disabled="userName.length === 0" type="submit" value="Spela">
+      </form>
+      <p v-if="message !== null">{{ message }}</p>
     </div>
-
-
-
+    <script src="https://unpkg.com/vue@3"></script>
     <script src="index.js"></script>
-</body>
+  </body> -->
 </html>
- -->
 
 
 
-<!-- Från M1U4 -->
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>VUE lessons</title>
-    
-</head>
-<body>
-    <div id="app">
-       <p>{{array[1] + Object.values(object) }} </p>
-    </div>
 
-
-
-    <script src="index.js"></script>
-</body>
-</html> -->
-
-
-<!-- Från M1U5 VG -->
-<!-- <!DOCTYPE html>
-<html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML-interpolering (VG)</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-  </head>
-  <body>
-    <div id="app">
-      <div v-html="markup"></div>
-    </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="index.js"></script>
-  </body>
-</html> -->
-
-<!-- Från M2U2 -->
-
-<!-- <!DOCTYPE html>
-<html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>Attributvärde med kortform</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-  </head>
-  <body>
-    <div id="app">
-      <input type="button" value="Skicka" :disabled="isDisabled">
-    </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="index.js"></script>
-  </body>
-</html> -->
-
-<!-- Från M2U3 -->
-
-<!-- <!DOCTYPE html>
-<html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>class-attributvärde</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-    <style>
-      .n {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <span :class="{ n: n > 2 && n < 4 }">Texten ska vara röd.</span>
-    </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="index.js"></script>
-  </body>
-</html> -->
 
 

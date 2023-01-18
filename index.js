@@ -514,5 +514,200 @@
 
 // MODUL 5 Formulärhantering (v-model), beräknade egenskaper (computed) och bevakare (watch)
 
+// "v-model skapar en koppling mellan formulärkomponenter och data-värden."
+
+// "Om man vill ha ett annat värde än textinnehållet i option-elementet, så kan man använda name-attributet, till exempel så här: <option name="gnu-linux">GNU/Linux</option>."
+
+// EXEMPEL FRPN HANDOUT PÅ V-MODEL
+
+
+// <div id="app">
+//   <textarea v-model="biography"></textarea>
+//   <div style="white-space: pre;">{{ biography }}</div>
+//   <!-- Making the world...
+
+// a better place! -->
+// </div>
+// <script>
+//   Vue.createApp({
+//     data() {
+//       return { biography: 'Making the world...\n\n... a better place!' }
+//     }
+//   }).mount('#app')
+// </script>
+
+
+// OCH 
+
+// {/* <div id="app">
+//   <select v-model="operatingSystem">
+//     <option>GNU/Linux</option>
+//     <option>macOS</option>
+//     <option>Windows</option>
+//   </select>
+//   {{ operatingSystem }} <!-- macOS -->
+// </div>
+// <script>
+//   Vue.createApp({
+//     data() {
+//       return { operatingSystem: 'macOS' }
+//     }
+//   }).mount('#app')
+// </script> */}
+
+// OCH
+
+/* <div id="app">
+  <input v-model="name" />
+  {{ name }} <!-- Jane Doe -->
+  {{ initials }} <!-- J.D -->
+</div>
+<script>
+  Vue.createApp({
+    computed: {
+      initials() {
+        return this.name // 'Jane Doe'
+          .split(' ') // ['Jane', 'Doe']
+          .map((name) => name.charAt(0)) // ['J', 'D']
+          .join('.') // 'J.D'
+      }
+    },
+    data() {
+      return { name: 'Jane Doe' }
+    }
+  }).mount('#app')
+</script> */
+
 // UPPGIFT 1
 
+// HTML-KOD
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Meddelande i konsolen</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input v-model="userName">
+//       <input @click="onClick" type="button" value="Klicka här">
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// VUE-KOD
+
+// Vue.createApp({
+//     data(){
+//         return {
+//             userName: ""
+//         }
+//     },
+//     methods: {
+//         onClick() {
+//             console.log(this.userName);
+//         }
+//     }
+// }).mount('#app')
+
+// UPPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Två textfält med samma innehåll</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input v-model="s">
+//       <input v-model="s">
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// Vue.createApp({
+//     data() {
+//       return { s: '' }
+//     }
+//   }).mount('#app')
+
+// UPPGIFT 3
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Beräknad egenskap</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input v-model="s">
+//       <p>Du har skrivit in {{ n }} tecken.</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// Vue.createApp({
+//     data(){
+//         return{
+//             s: ""
+//         }
+//     },
+//     computed: {
+//         n(){
+//             return this.s.length
+//         }
+//     }
+// }).mount('#app')
+
+// UPPGIFT 4
+
+// Vue.createApp({
+//     data(){
+//         return {
+//             s: ""
+//         }
+//     },
+//     watch: {
+//         s(event){
+//             console.log(event)
+//         }
+//     }
+
+// }).mount('#app')
+
+// // ELLER
+
+// Vue.createApp({
+//     data(){
+//         return {
+//             s: ""
+//         }
+//     },
+//     watch: {
+//         s(){
+//             console.log(this.s)
+//         }
+//     }
+
+// }).mount('#app')
+  

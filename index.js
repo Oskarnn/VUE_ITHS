@@ -731,5 +731,120 @@
 
 // MODUL 6
 
+
+
+// ANTECKNINGAR 
+
+// fetch('https://avancera.app/cities/', {
+//   body: '{ "name": "Teststad", "population": 123 }',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   method: 'POST'
+// })
+//   .then(response => response.json())
+//   .then(result => {
+//     console.log(result)
+//   })
+
 // UPPGIFT 1
-  
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Hämta städer med en knapp</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <input @click="fetchCities" type="button" value="Hämta städer">
+//       <dl v-if="cities !== null">
+//         <template v-for="city in cities">
+//           <dt>{{ city.name }}</dt>
+//           <dd>{{ city.population }}</dd>
+//           <dd>{{ city.id }}</dd>
+//         </template>
+//       </dl>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({
+//       data(){
+//         return{
+//           cities: null
+//         }
+//       },
+//       methods: {
+//         fetchCities(){
+//           fetch('https://avancera.app/cities/')
+
+//             .then((response) => response.json())
+//             .then((result) =>  {
+//               this.cities = result
+//             })
+//         }
+//     }
+// })
+
+// app.mount('#app')
+
+// UPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Hämta städer automatiskt</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <dl v-if="cities !== null">
+//         <template v-for="city in cities">
+//           <dt>{{ city.name }}</dt>
+//           <dd>{{ city.population }}</dd>
+//         </template>
+//       </dl>
+//       <p v-else>Laddar...</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({
+//   created(){
+//       this.fetchCities()
+    
+//   },
+
+//   data(){
+//     return{
+//       cities: null
+//     }
+//   },
+//   methods: {
+//     fetchCities(){
+//       fetch('https://avancera.app/cities/')
+
+//         .then((response) => response.json())
+//         .then((result) =>  {
+//           this.cities = result
+//         })
+//     }
+// }
+// })
+
+// app.mount('#app')

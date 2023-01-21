@@ -1131,3 +1131,31 @@
 // })
 
 // dice.mount("#app")
+
+// UPPGIFT 4 
+
+// const app = Vue.createApp({})
+
+// app.component('cities', {
+//     created(){
+//       fetch('https://avancera.app/cities/')
+//       .then((response) => response.json())
+//       .then((result) => {
+//         this.cities = result
+//         console.log(this.cities)
+//       })
+//     },
+//     data(){
+//       return{
+//         cities: null
+//       }
+//     },
+//     template:`
+//     <ul v-for="city in cities">
+//       <li>{{city.name}}</li>
+//     </ul>
+//     `
+
+// })
+
+// app.mount('#app')

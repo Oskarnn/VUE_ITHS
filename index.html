@@ -2,26 +2,18 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8">
-    <title>Hämta städer automatiskt</title>
+    <title>En tärningskomponent</title>
     <meta content="initial-scale=1, width=device-width" name="viewport">
   </head>
   <body>
+    <h1> Få en sexa och vinn en miljon</h1>
     <div id="app">
-      <dl v-if="cities !== null">
-        <template v-for="city in cities">
-          <dt>{{ city.name }}</dt>
-          <dd>{{ city.population }}</dd>
-        </template>
-      </dl>
-      <p v-else>Laddar...</p>
+      <dice></dice>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="index.js"></script>
   </body>
 </html>
-
-
-
 
 
 

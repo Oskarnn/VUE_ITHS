@@ -848,3 +848,286 @@
 // })
 
 // app.mount('#app')
+
+// UPPGIFT 3
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Lägg till en stad</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <label>
+//         Namn
+//         <input v-model="name" placeholder="Namn">
+//       </label>
+//       <label>
+//         Befolkning
+//         <input v-model="population" placeholder="Befolkning" type="number">
+//       </label>
+//       <input @click="addCity()" type="button" value="Lägg till stad">
+//       <dl v-if="cities !== null">
+//         <template v-for="city in cities">
+//           <dt>{{ city.name }}</dt>
+//           <dd>{{ city.population }}</dd>
+//         </template>
+//       </dl>
+//       <p v-else>Laddar...</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({
+//   created(){
+//     fetch('https://avancera.app/cities/')
+
+//     .then((response) => response.json())
+//     .then((result) => {
+//       this.cities = result
+//       })
+//     },
+//   data(){
+//     return{
+//       cities: null,
+//       name: null,
+//       population: null
+//         }
+//   },
+
+//   methods: {
+// addCity() {
+      
+//   fetch('https://avancera.app/cities/', {
+//           body: JSON.stringify({
+        
+//           name: this.name,
+//           population: this.population
+//         }),
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         method: 'POST'
+//       })
+
+
+//         .then((response) => response.json())
+//         .then((result) => {
+//           this.cities = result
+//         })
+//     }
+//   }
+// })
+
+
+// app.mount('#app')
+
+// UPPGIFT 4
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Kattfakta</title>
+// </head>
+// <body>
+//   <div id="app">
+//     <button @click="fetchCats"> Hämta Kattfakta</button>
+//     <ul v-for="cat in cats">
+//       <li>{{cat.text}}</li>
+//     </ul>
+//     <div v-if="cats !== null">
+//       <p> För att se när dessa fakta skapades..</p>
+//       <button @click="showDate()">Klicka här</button>
+//       <ul v-if="date !== null">
+//         <li>{{date}}</li>
+//       </ul>
+//     </div>
+
+//   </div>
+//   <script src="https://unpkg.com/vue@3"></script>
+//   <script>
+//     const app = Vue.createApp({
+//   data(){
+//     return {
+//       cats: null,
+//       date: null
+//     }
+//   },
+//   methods: {
+//     fetchCats(){
+//       fetch('https://cat-fact.herokuapp.com/facts')
+//       .then((response) => response.json())
+//       .then((result) => {
+//         this.cats = result
+//         console.log(this.cats)
+//       })
+//     },
+//     showDate(){
+//       this.date = this.cats[1].createdAt
+//     }
+//   }
+
+// })
+
+// app.mount('#app')
+//   </script>
+// </body>
+// </html>
+
+// UPPGIFT 5 (VG)
+
+// MODUL 6 Komponenter
+
+// UPPGIFT 1
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//   <title>Navbar</title>
+// </head>
+// <body>
+//   <div id="app">
+//   <navbar></navbar>
+//   </div>
+//   <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+// </body>
+// </html>
+
+// SCRIPT
+
+// const navbar = Vue.createApp({})
+
+// navbar  .component( 'navbar', {
+//     template: `
+//               <nav>
+//                 <a href="https://www.wikipedia.org">Wikipedia</a>
+
+//                 <a href="https://www.google.com">Google</a>
+//                 <a href="https://www.facebook.com">Facebook</a>
+//               </nav>
+//     `
+  
+// })
+
+// navbar.mount("#app")
+
+// UPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En singla slant-komponent</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <h1>Några slumpmässiga utfall</h1>
+//       <ul>
+//         <li><coin-toss></coin-toss></li>
+//         <li><coin-toss></coin-toss></li>
+//         <li><coin-toss></coin-toss></li>
+//         <li><coin-toss></coin-toss></li>
+//         <li><coin-toss></coin-toss></li>
+//       </ul>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// app.component( 'coin-toss', {
+//   data() {
+//     return { oneOrZero: Math.round(Math.random()) }
+//   },
+
+//  template:`
+//            <span v-if="oneOrZero < 0.5">Krona</span>
+//            <span v-else>Klave</span>
+//  `
+
+// })
+
+// app.mount('#app')
+
+// UPPGIFT 3
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En tärningskomponent</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <h1> Få en sexa och vinn en miljon</h1>
+//     <div id="app">
+//       <dice></dice>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const dice = Vue.createApp({})
+
+
+// dice.component( 'dice', {
+//   created() {
+//     this.randomNum()
+//   },
+
+//   data(){
+//     return{
+//       count: null,
+//       message: "Grattis en sexa"
+//     }
+//   },
+
+//   methods: {
+//     randomNum(){
+//       this.count = Math.floor(Math.random() * 6) + 1
+//       console.log(this.count)
+      
+//     }
+//   },
+
+  
+
+//   template: `
+//               <input type="button" @click="randomNum()" :value="this.count"> 
+//               <p v-if="this.count === 6">{{message}}</p>
+//               <p v-else-if="this.count === 5">Nästan där, Försök igen</p>
+//   `
+
+// })
+
+// dice.mount("#app")

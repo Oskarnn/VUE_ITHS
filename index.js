@@ -1337,3 +1337,183 @@
 // })
 
 // app.mount('#app')
+
+// UPPGIFT 5 (VG)
+
+// MODUL 8 Custom events
+
+// UPPGIFT 1
+
+// app.component( 'controls', {
+//   methods: {
+//     onClick(){
+//       this.$emit( 'start-game')
+//     }
+//   },
+
+//   template:`
+//     <input @click="onClick" type="button" value="Start game">
+//   `
+// })
+
+
+// UPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En nummer-payload</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <controls @start-game="onStartGame"></controls>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script>
+//       const app = Vue.createApp({
+//         methods: {
+//           onStartGame(n) {
+//             console.log('start-game har tagits emot!')
+//             console.log(`Numret är ${n}.`)
+//           }
+//         }
+//       })
+//     </script>
+//     <script src="index.js"></script>
+//     <script>
+//       app.mount('#app')
+//     </script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// app.component( 'controls', {
+//     methods: {
+//       onClick(){
+//         this.$emit( 'start-game', 100)
+//       }
+//     },
+
+//     template:`
+//       <input @click="onClick" type="button" value="Start game">
+//     `
+// })
+
+// UPPGIFT 3
+
+// HTML 
+
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>En sträng-payload från ett textfält</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <controls @start-game="onStartGame"></controls>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script>
+//       const app = Vue.createApp({
+//         methods: {
+//           onStartGame(s) {
+//             console.log('start-game har tagits emot!')
+//             console.log(`Strängen är ${s}.`)
+//           }
+//         }
+//       })
+//     </script>
+//     <script src="index.js"></script>
+//     <script>
+//       app.mount('#app')
+//     </script>
+//   </body>
+
+//   SCRIPT
+
+// app.component( 'controls', {
+//     data() {
+//       return {
+//         string: "",
+//         number: 100
+//       }
+//     },
+//     emits: ['start-game'],
+//     methods: {
+//       onClick(){
+//         this.$emit( 'start-game', {
+//           userName: this.string,
+//           credits: this.number
+//         })
+//       }
+//     },
+
+//     template:`
+//       <input @click="onClick" type="button" value="Start game">
+//       <input type="text" v-model="string" >
+//     `
+// })
+
+// UPPGIFT 4
+
+// HTML 
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Skicka och ta emot en objekt-payload</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <controls @start-game="onStartGame"></controls>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script>
+//       const app = Vue.createApp({
+//         methods: {
+//           onStartGame(o) {
+//             console.log('start-game har tagits emot!')
+//             console.log(`Användarnamnet är ${o.userName}.`)
+//             console.log(`Poängen är ${o.credits}.`)
+//           }
+//         }
+//       })
+//     </script>
+//     <script src="index.js"></script>
+//     <script>
+//       app.mount('#app')
+//     </script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// app.component( 'controls', {
+//   data() {
+//     return {
+//       string: null,
+//       number: 100
+//     }
+//   },
+//   emits: ['start-game'],
+//   methods: {
+//     onClick() {
+//       this.$emit( 'start-game', {
+//         userName: this.string,
+//         credits: this.number
+//       })
+//     }
+//   },
+//   template:`
+//   <input @click="onClick()" type="button" value="Start Emitting">
+//   <input type="text" v-model="string">
+//   `
+// })

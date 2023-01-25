@@ -2,20 +2,33 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8">
-    <title>Ett obligatoriskt och typsäkert värde</title>
+    <title>Skicka och ta emot en objekt-payload</title>
     <meta content="initial-scale=1, width=device-width" name="viewport">
   </head>
   <body>
     <div id="app">
-      <greet player-name="Alice"></greet> <!-- Välkommen, Alice! -->
-      <greet player-name="Bob"></greet> <!-- Välkommen, Bob! -->
-      <greet></greet> <!-- Felmeddelande i konsolen -->
-      <greet :player-name="5"></greet> <!-- Felmeddelande i konsolen -->
+      <controls @start-game="onStartGame"></controls>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const app = Vue.createApp({
+        methods: {
+          onStartGame(o) {
+            console.log('start-game har tagits emot!')
+            console.log(`Användarnamnet är ${o.userName}.`)
+            console.log(`Poängen är ${o.credits}.`)
+          }
+        }
+      })
+    </script>
     <script src="index.js"></script>
+    <script>
+      app.mount('#app')
+    </script>
   </body>
 </html>
+
+
 
 
 

@@ -2,17 +2,21 @@
 <html lang="sv">
   <head>
     <meta charset="utf-8">
-    <title>Webbanrop i en komponent</title>
+    <title>Ett obligatoriskt och typsäkert värde</title>
     <meta content="initial-scale=1, width=device-width" name="viewport">
   </head>
   <body>
     <div id="app">
-      <cities></cities>
+      <greet player-name="Alice"></greet> <!-- Välkommen, Alice! -->
+      <greet player-name="Bob"></greet> <!-- Välkommen, Bob! -->
+      <greet></greet> <!-- Felmeddelande i konsolen -->
+      <greet :player-name="5"></greet> <!-- Felmeddelande i konsolen -->
     </div>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="index.js"></script>
   </body>
 </html>
+
 
 
 <!-- ONGOING VG UPPGIFT 

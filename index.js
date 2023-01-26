@@ -1517,3 +1517,258 @@
 //   <input type="text" v-model="string">
 //   `
 // })
+
+// MODUL 8 Vue router
+
+/* <script src="https://unpkg.com/vue-router@4"></script> */
+
+/* <router-view></router-view> */
+
+// UPPGIFT 1
+
+// const app = Vue.createApp({})
+
+// const Home = {template:`
+//     <h1>Home</h1>
+// `}
+
+// const PageOne = {template: '<h1>Page 1</h1>'}
+
+// const PageTwo = {template: '<h1>Page 2</h1>'}
+
+// const routes = [
+//   {
+//     component: Home,
+//     path: '/'
+//   },
+//   {
+//     component: PageOne,
+//     path: '/page-1'
+//   },  
+//   {
+//     component: PageTwo,
+//     path: '/page-2'
+//   }
+
+// ]
+
+
+// const router = VueRouter.createRouter({
+//   history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+// routes: routes
+// })
+
+// app.use(router)
+
+// app.mount('#app')
+
+// UPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Programmatisk navigation</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <nav>
+//         <ul>
+//           <li><router-link to="/">Home</router-link></li>
+//           <li><router-link to="/page-1">Page 1</router-link></li>
+//           <li><router-link to="/page-2">Page 2</router-link></li>
+//         </ul>
+//       </nav>
+//       <main>
+//         <router-view></router-view>
+//       </main>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="https://unpkg.com/vue-router@4"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// const Home = {template:`
+//     <h1>Home</h1>
+//     <input type="button" @click="this.$router.push({path: '/page-1'})" value="Tillbaka till Page 1">
+// `}
+
+// const PageOne = {template: '<h1>Page 1</h1>'}
+
+// const PageTwo = {template: '<h1>Page 2</h1>'}
+
+// const routes = [
+//   {
+//     component: Home,
+//     path: '/'
+//   },
+//   {
+//     component: PageOne,
+//     path: '/page-1'
+//   },  
+//   {
+//     component: PageTwo,
+//     path: '/page-2'
+//   }
+
+// ]
+
+
+// const router = VueRouter.createRouter({
+//   history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+// routes: routes
+// })
+
+// app.use(router)
+
+// app.mount('#app')
+
+// ELLER
+
+// const app = Vue.createApp({})
+
+// const Home = {
+//   methods: {
+//     onClick() {
+//       this.$router.push({path: '/page-1'})
+//     }
+//     },
+//   template:`
+//     <h1>Home</h1>
+//     <input type="button" @click="onClick()" value="Tillbaka till Page 1">
+// `}
+
+// const PageOne = {template: '<h1>Page 1</h1>'}
+
+// const PageTwo = {template: '<h1>Page 2</h1>'}
+
+// const routes = [
+//   {
+//     component: Home,
+//     path: '/'
+//   },
+//   {
+//     component: PageOne,
+//     path: '/page-1'
+//   },  
+//   {
+//     component: PageTwo,
+//     path: '/page-2'
+//   }
+
+// ]
+
+
+
+
+
+// const router = VueRouter.createRouter({
+//   history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+// routes: routes
+// })
+
+// app.use(router)
+
+// app.mount('#app')
+
+// UPPGIFT 3
+
+// HTML 
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Adressparameter</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <nav>
+//         <ul>
+//           <li><router-link to="/pages/1">Page 1</router-link></li>
+//           <li><router-link to="/pages/2">Page 2</router-link></li>
+//           <li><router-link to="/pages/3">Page 3</router-link></li>
+//         </ul>
+//       </nav>
+//       <main>
+//         <router-view></router-view>
+//       </main>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="https://unpkg.com/vue-router@4"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+
+// const Pages = {template: '<h1> Page {{ $route.params.number }}</h1>'}
+
+
+
+// const routes = [
+//   {
+//     component: Pages,
+//     path: '/pages/:number'
+//   }
+// ]
+
+// const router = VueRouter.createRouter({
+//   history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+// routes: routes
+// })
+
+// app.use(router)
+
+// app.mount('#app')
+
+// UPPGIFT 4
+
+const app = Vue.createApp({})
+
+
+const Pages = {template: '<h1> Page {{$route.params.second}}</h1>'}
+
+const Other = {template: '<h1> {{$route.params.first}}{{$route.params.second}}</h1>'}
+
+const routes = [
+  {
+    component: Pages,
+    path: '/pages/:second'
+  },
+  {
+  
+  component: Other,
+  path: '/:first/:second'
+  }
+]
+
+
+
+
+
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+routes: routes
+})
+
+app.use(router)
+
+app.mount('#app')
+
+
+
+// {{ $route.params.first}}

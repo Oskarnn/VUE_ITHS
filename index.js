@@ -8,7 +8,7 @@
 //     console.log(newArray)
 //  }
 //  else{
-//     console.log("För stort") 
+//     console.log("För stort")
 //  }
 // });
 
@@ -31,7 +31,7 @@
 
 // UPPGIFT 1
 
-// Vue.createApp({}).mount('#app') 
+// Vue.createApp({}).mount('#app')
 
 // UPPGIFT 2
 
@@ -52,11 +52,11 @@
 //             n: 2,
 //             Boolean: true,
 //             nu: null,
-//             u: undefined  
+//             u: undefined
 //         }
 //     }
 
-// }).mount('#app') 
+// }).mount('#app')
 
 // UPPGIFT 4
 
@@ -77,7 +77,7 @@
 //       return { markup: '<h1>Välkommen!</h1>' }
 //     }
 //   }).mount('#app')
-  
+
 // MODUL 2 Attributinterpolering (v-bind)
 
 // UPPGIFT 1
@@ -103,11 +103,11 @@
 // Vue.createApp({
 //     data(){
 //       return {
-//         n: 3 
+//         n: 3
 //       }
 //     }
 //   }).mount('#app')
-  
+
 // UPPGIFT 4
 
 // const style = Vue.createApp({
@@ -218,7 +218,7 @@
 //         <li v-for="player in players"> {{player.name}}
 //           <span class="credits"> {{player.credits}} </span>
 //         </li>
-       
+
 //       </ul>
 //     </div>
 //     <script src="https://unpkg.com/vue@3"></script>
@@ -255,7 +255,7 @@
 //       <ul>
 //         <li v-for="(x, y) in products">
 //           {{ y }}</li>
-       
+
 //       </ul>
 //     </div>
 //     <script src="https://unpkg.com/vue@3"></script>
@@ -291,7 +291,7 @@
 
 // MODUL 4 Händelser (v-on) och metoder (methods)
 
-//  UPPGIFT 1 
+//  UPPGIFT 1
 
 // <!DOCTYPE html>
 // <html lang="sv">
@@ -321,7 +321,7 @@
 
 // Går att skriva onClick()
 
-// data(), methods:, 
+// data(), methods:,
 
 // UPPGIFT 2
 
@@ -380,19 +380,19 @@
 // </html>
 
 // Vue.createApp({
-//     data(){               //data() är en funktionen som retunerar värden i varieblar till sig själv                               
+//     data(){               //data() är en funktionen som retunerar värden i varieblar till sig själv
 //         return {
 //             value: 1
 //         }
 //     },
 //     methods: {
 //         increase(){
-//             this.value = this.value +1 
+//             this.value = this.value +1
 //         },
 //         decrease(){
 //             this.value = this.value -1
 //         }
-//     }                   
+//     }
 
 // }).mount('#app')
 
@@ -437,7 +437,7 @@
 
 // UPPGIFT 5 (VG)
 
-// HTML 
+// HTML
 
 // <!DOCTYPE html>
 // <html lang="sv">
@@ -463,7 +463,7 @@
 //             <td>{{product.price}}</td>
 //             <td><input @click="addToCart(idx)" type="button" value="+"></td>
 //           </tr>
-        
+
 //         </tbody>
 //       </table>
 //       <p>Totalsumma: {{total}}</p>
@@ -537,7 +537,7 @@
 // </script>
 
 
-// OCH 
+// OCH
 
 // {/* <div id="app">
 //   <select v-model="operatingSystem">
@@ -718,7 +718,7 @@
 //         return{
 //             userName: "",
 //             message: 'Välkommen'
-            
+
 //         }
 //     },
 
@@ -733,7 +733,7 @@
 
 
 
-// ANTECKNINGAR 
+// ANTECKNINGAR
 
 // fetch('https://avancera.app/cities/', {
 //   body: '{ "name": "Teststad", "population": 123 }',
@@ -827,7 +827,7 @@
 // const app = Vue.createApp({
 //   created(){
 //       this.fetchCities()
-    
+
 //   },
 
 //   data(){
@@ -905,10 +905,10 @@
 
 //   methods: {
 // addCity() {
-      
+
 //   fetch('https://avancera.app/cities/', {
 //           body: JSON.stringify({
-        
+
 //           name: this.name,
 //           population: this.population
 //         }),
@@ -1024,7 +1024,7 @@
 //                 <a href="https://www.facebook.com">Facebook</a>
 //               </nav>
 //     `
-  
+
 // })
 
 // navbar.mount("#app")
@@ -1116,14 +1116,14 @@
 //     randomNum(){
 //       this.count = Math.floor(Math.random() * 6) + 1
 //       console.log(this.count)
-      
+
 //     }
 //   },
 
-  
+
 
 //   template: `
-//               <input type="button" @click="randomNum()" :value="this.count"> 
+//               <input type="button" @click="randomNum()" :value="this.count">
 //               <p v-if="this.count === 6">{{message}}</p>
 //               <p v-else-if="this.count === 5">Nästan där, Försök igen</p>
 //   `
@@ -1132,7 +1132,7 @@
 
 // dice.mount("#app")
 
-// UPPGIFT 4 
+// UPPGIFT 4
 
 // const app = Vue.createApp({})
 
@@ -1261,7 +1261,7 @@
 //     }
 //   },
 
-//   props: { 
+//   props: {
 //     playerName: String
 
 //   },
@@ -1285,7 +1285,7 @@
 //     }
 //   },
 
-//   props: { 
+//   props: {
 //     playerName: { type: String, required: true }
 
 //   },
@@ -1308,7 +1308,7 @@
 //     }
 //   },
 
-//   props: { 
+//   props: {
 //     playerName: { type: String, default: "Anonym" }
 
 //   },
@@ -1325,8 +1325,8 @@
 // const app = Vue.createApp({})
 
 // app.component('greet', {
- 
-//   props: { 
+
+//   props: {
 //     playerName: { type: String }
 
 //   },
@@ -1406,7 +1406,7 @@
 
 // UPPGIFT 3
 
-// HTML 
+// HTML
 
 // <html lang="sv">
 //   <head>
@@ -1462,7 +1462,7 @@
 
 // UPPGIFT 4
 
-// HTML 
+// HTML
 
 // <!DOCTYPE html>
 // <html lang="sv">
@@ -1544,7 +1544,7 @@
 //   {
 //     component: PageOne,
 //     path: '/page-1'
-//   },  
+//   },
 //   {
 //     component: PageTwo,
 //     path: '/page-2'
@@ -1614,7 +1614,7 @@
 //   {
 //     component: PageOne,
 //     path: '/page-1'
-//   },  
+//   },
 //   {
 //     component: PageTwo,
 //     path: '/page-2'
@@ -1659,7 +1659,7 @@
 //   {
 //     component: PageOne,
 //     path: '/page-1'
-//   },  
+//   },
 //   {
 //     component: PageTwo,
 //     path: '/page-2'
@@ -1682,7 +1682,7 @@
 
 // UPPGIFT 3
 
-// HTML 
+// HTML
 
 // <!DOCTYPE html>
 // <html lang="sv">
@@ -1737,38 +1737,285 @@
 
 // UPPGIFT 4
 
-const app = Vue.createApp({})
+// const app = Vue.createApp({})
 
 
-const Pages = {template: '<h1> Page {{$route.params.second}}</h1>'}
+// const Pages = {template: '<h1> Page {{$route.params.second}}</h1>'}
 
-const Other = {template: '<h1> {{$route.params.first}}{{$route.params.second}}</h1>'}
+// const Other = {template: '<h1> {{$route.params.first}}{{$route.params.second}}</h1>'}
 
-const routes = [
-  {
-    component: Pages,
-    path: '/pages/:second'
-  },
-  {
-  
-  component: Other,
-  path: '/:first/:second'
-  }
-]
+// const routes = [
+//   {
+//     component: Pages,
+//     path: '/pages/:second'
+//   },
+//   {
 
-
-
-
-
-const router = VueRouter.createRouter({
-  history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
-routes: routes
-})
-
-app.use(router)
-
-app.mount('#app')
+//   component: Other,
+//   path: '/:first/:second'
+//   }
+// ]
 
 
 
-// {{ $route.params.first}}
+
+
+// const router = VueRouter.createRouter({
+//   history: VueRouter.createWebHashHistory(),  /*history: createWebHistory()- HTML5, utan #*/
+// routes: routes
+// })
+
+// app.use(router)
+
+// app.mount('#app')
+
+
+
+// // {{ $route.params.first}}
+
+// UPPGIFT 5 (VG)
+
+// MODUL 9 Vuex
+
+/* <script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vuex@4"></script> */
+
+
+// this.$store.state (i JavaScript) eller $store.state (i vår template/HTML-kod)
+
+// UPPGIFT 1
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+
+// <head>
+//   <meta charset="utf-8">
+//   <title>En store med värden</title>
+//   <meta content="initial-scale=1, width=device-width" name="viewport">
+// </head>
+
+// <body>
+//   <div id="app">
+//     {{ $store.state }}
+//   </div>
+//   <script src="https://unpkg.com/vue@3"></script>
+//   <script src="https://unpkg.com/vuex@4"></script>
+//   <script src="index.js"></script>
+// </body>
+
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// // VIKTIGT ATT DENNA LIGGER UNDER OBJECTET "STATE" FÖR ATT DET SKA HINNA LÄSAS IN FÖRST
+// // const store = new Vuex.Store({ state: state })
+// const store = Vuex.createStore({ state })
+
+// app.use(store)
+
+// app.mount('#app')
+
+
+// UPPGIFT 2
+
+// HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+
+// <head>
+//   <meta charset="utf-8">
+//   <title>Hämta ett state-värde</title>
+//   <meta content="initial-scale=1, width=device-width" name="viewport">
+// </head>
+
+// <body>
+//   <div id="app">
+//     <some-component></some-component>
+//   </div>
+//   <script src="https://unpkg.com/vue@3"></script>
+//   <script src="https://unpkg.com/vuex@4"></script>
+//   <script src="index.js"></script>
+// </body>
+
+// </html>
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// const store = Vuex.createStore({ state })
+
+// app.component( 'some-component', {
+//   template:`
+//       <div>{{this.$store.state.num}}</div>
+//   `
+// })
+
+// app.use(store)
+
+// app.mount('#app')
+
+// ELLER
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// const store = Vuex.createStore({ state })
+
+// app.component( 'some-component', {
+//   computed:{
+//     number(){
+//       return this.$store.state.num
+//     }
+//   },
+//   template:`
+//       <div>{{ number }}</div>
+//   `
+// })
+
+// app.use(store)
+
+// app.mount('#app')
+
+// UPPGIFT 3
+
+// HTML
+
+// SAMMA SOM UPPGIFT 2
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// const mutations = {
+//   changeNumber(state) {
+//     state.num = state.num + 1
+//   }
+// }
+
+// const store = Vuex.createStore({ mutations, state })
+
+// app.component( 'some-component', {
+//   computed:{
+//     number(){
+//       return this.$store.state.num
+//     }
+//   },
+//   template:`
+//       <div>{{ number }}</div>
+//       <input type="button" @click="$store.commit('changeNumber')" value="Öka siffran">
+//   `
+// })
+
+// app.use(store)
+
+// app.mount('#app')
+
+// ELLER
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// const mutations = {
+//   changeNumber(state) {
+//     state.num++
+//   }
+// }
+
+// const store = Vuex.createStore({ mutations, state })
+
+// app.component( 'some-component', {
+//   computed:{
+//     number(){
+//       return this.$store.state.num
+//     }
+//   },
+//   template:`
+//       <div>{{ number }}</div>
+//       <input type="button" @click="$store.commit('changeNumber')" :value="$store.state.num">
+//   `
+// })
+
+// app.use(store)
+
+// app.mount('#app')
+
+// UPPGIFT 4
+
+// HTML
+
+// SAMMA SOM OVAN
+
+// SCRIPT
+
+// const app = Vue.createApp({})
+
+// const state = {
+//   num: 1,
+//   string: "Hello World!",
+//   boolean: false
+// }
+
+// const mutations = {
+//   changeNumber(state, amount) {
+//     state.num = state.num + parseInt(amount)
+//   }
+// }
+
+// const store = Vuex.createStore({ mutations, state })
+
+// app.component( 'some-component', {
+//   computed:{
+//     number(){
+//       return this.$store.state.num
+//     }
+//   },
+//   data() {
+//     return {
+//       amount: null
+//     }
+//   },
+
+//   template:`
+//       <div>{{ number }}</div>
+//       <input type="text" v-model="amount">
+//       <input type="button" @click="$store.commit('changeNumber', amount)" value="Öka siffran">
+//   `
+// })
+
+// app.use(store)
+
+// app.mount('#app')

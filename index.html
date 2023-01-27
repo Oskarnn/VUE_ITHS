@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
-    <meta charset="utf-8">
-    <title>Adressparametrar</title>
-    <meta content="initial-scale=1, width=device-width" name="viewport">
-  </head>
-  <body>
-    <div id="app">
-      <nav>
-        <ul>
-          <li><router-link to="/pages/1">Page 1</router-link></li>
-          <li><router-link to="/pages/2">Page 2</router-link></li>
-          <li><router-link to="/pages/3">Page 3</router-link></li>
-          <li><router-link to="/one/two">“onetwo”</router-link></li>
-          <li><router-link to="/hello/world">“helloworld”</router-link></li>
-        </ul>
-      </nav>
-      <main>
-        <router-view></router-view>
-      </main>
-    </div>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="https://unpkg.com/vue-router@4"></script>
-    <script src="index.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hämta ett state-värde</title>
+  <meta content="initial-scale=1, width=device-width" name="viewport">
+</head>
+
+<body>
+  <div id="app">
+    <some-component></some-component>
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="https://unpkg.com/vuex@4"></script>
+  <script src="index.js"></script>
+</body>
+
 </html>
 
 
 
-<!-- ONGOING VG UPPGIFT 
+<!-- ONGOING VG UPPGIFT
 <!DOCTYPE html>
 <html lang="sv">
   <head>
@@ -48,9 +40,3 @@
     <script src="index.js"></script>
   </body>
 </html> -->
-
-
-
-
-
-

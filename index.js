@@ -2019,3 +2019,5 @@
 // app.use(store)
 
 // app.mount('#app')
+
+console.log("Hello World!")

@@ -122,6 +122,40 @@
 
 // UPPGIFT 5 (VG)
 
+// >HTML
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>Attributnamn och -värde via “variabler” (VG)</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <ol v-bind:[name]="value">
+//         <li></li>
+//         <li></li>
+//         <li></li>
+//       </ol>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
+
+// Vue.createApp({
+//   data() {
+//     return {
+//       name: 'type',
+//       value: 'i'
+//     }
+//   }
+// }).mount('#app')
+
+
 // MODUL 3 Villkorlig rendering (v-if) och listrendering (v-for)
 
 // FRÅN VUEJS.ORG OM V-FOR
@@ -711,20 +745,47 @@
 
 // }).mount('#app')
 
-// UPPGIFT 5 (VG) INTE KLAR
+// UPPGIFT 5 (VG) 
+// HTML 
+
+// <!DOCTYPE html>
+// <html lang="sv">
+//   <head>
+//     <meta charset="utf-8">
+//     <title>submit (VG)</title>
+//     <meta content="initial-scale=1, width=device-width" name="viewport">
+//   </head>
+//   <body>
+//     <div id="app">
+//       <form @submit="onSubmit">
+//         <input v-model="userName">
+//         <input :disabled="userName.length === 0" type="submit" value="Spela">
+//       </form>
+//       <p v-if="message !== null">{{ message }}</p>
+//     </div>
+//     <script src="https://unpkg.com/vue@3"></script>
+//     <script src="index.js"></script>
+//   </body>
+// </html>
+
+// SCRIPT
 
 // Vue.createApp({
 //     data(){
 //         return{
 //             userName: "",
-//             message: 'Välkommen'
+//             message: null
 
 //         }
 //     },
 
-//     methods: {
-//         onClick() {
 
+//     methods: {
+//         onSubmit(event) {
+//           event.preventDefault();
+//           this.message = "Välkommen, " + this.userName + "!"
+//           console.log(this.message);
+      
 //         }
 //     }
 // }).mount('#app')
@@ -1995,7 +2056,9 @@
 //   }
 // }
 
-// const store = Vuex.createStore({ mutations, state })
+// const store = Vuex.createStore({ mutations: mutations, state })
+
+// MUTATIONS OCH STATE GÅR ATT "DÖPA OM" PÅ SAMMA SÄTT SOM ROUTER: ROUTER
 
 // app.component( 'some-component', {
 //   computed:{
@@ -2020,4 +2083,4 @@
 
 // app.mount('#app')
 
-console.log("Hello World!")
+// console.log("Hello World!")
